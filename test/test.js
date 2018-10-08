@@ -4,13 +4,13 @@ const chaiSubset = require('chai-subset')
 const ArgumentError = require('../index').ArgumentError
 const transformHotel = require('../index').transformHotel
 
-const executeTests = require('./testcase').executeTests
-const singlePropertyTestCase = require('./testcase').singlePropertyTestCase
-const crossPropertyTestCase = require('./testcase').crossPropertyTestCase
+const executeTests = require('./lib/testcase').executeTests
+const singlePropertyTestCase = require('./lib/testcase').singlePropertyTestCase
+const crossPropertyTestCase = require('./lib/testcase').crossPropertyTestCase
 
-const AlwaysValid = require('./evaluator').AlwaysValid
-const Contains = require('./evaluator').Contains
-const IsError = require('./evaluator').IsError
+const AlwaysValid = require('./lib/evaluator').AlwaysValid
+const Contains = require('./lib/evaluator').Contains
+const IsError = require('./lib/evaluator').IsError
 
 const referenceInput = require('../referenceInput.json')
 const referenceResult = require('../referenceResult.json')
@@ -95,6 +95,7 @@ const hotelNameAndFeatureTests = {
   ]
 }
 
+// executes each test scenario for its own
 executeTests(
   `Single Property Tests - ${hotelNameAndFeatureTests.title}`,
   singlePropertyTestCase(
@@ -105,6 +106,8 @@ executeTests(
   )
 )
 
+// builds a cross product / cartesian product of each
+// test scenario and iterates through all the combinations
 executeTests(
   `Cross Property Tests - ${hotelNameAndFeatureTests.title}`,
   crossPropertyTestCase(
