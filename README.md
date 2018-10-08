@@ -13,6 +13,11 @@ This is a proof of concept for testing simple functions.
 * can address only one argument (of type object) - no arrays, no primitives yet
 * limited assertions
 
+## TODOs
+
+* generate testscenarios out of schema (json schema / graphQL schema)
+* more assertions
+
 ## how to run
 
 This command tests the [transformation function](./index.js) in `./index.js` using the
