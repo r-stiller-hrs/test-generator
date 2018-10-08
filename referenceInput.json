@@ -1,0 +1,16 @@
+{
+    "name": "Hotel1",
+    "description": "description for Hotel1",
+    "rooms": [
+        {
+            "name": "room1",
+            "type": "suite",
+            "description": "..."
+        }
+    ],
+    "features": {
+        "free_wifi": true,
+        "breakfast_included": true,
+        "cable_tv": true
+    }
+}
